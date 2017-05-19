@@ -1,0 +1,14 @@
+{
+  "name": "r3-boilerplate",
+  "version": "0.0.1",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node ./worker",
+    "test": "eslint . --fix && echo 'Eslint Passed\\n'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh:git@github.com:adispring/r3-boilerplate.git"
+  },
+  "license": "MIT"
+}
