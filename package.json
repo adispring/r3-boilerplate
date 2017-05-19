@@ -4,11 +4,18 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node ./worker",
-    "test": "eslint . --fix && echo 'Eslint Passed\\n'"
+    "test": "eslint . --fix"
   },
   "repository": {
     "type": "git",
-    "url": "ssh:git@github.com:adispring/r3-boilerplate.git"
+    "url": "git+ssh:git@github.com:adispring/r3-boilerplate.git"
   },
+  "author": "wangzengdi",
+  "keywords": [
+    "react",
+    "redux",
+    "ramda",
+    "webpack"
+  ]
   "license": "MIT"
 }
