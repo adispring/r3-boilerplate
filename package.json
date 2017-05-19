@@ -4,6 +4,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node ./worker",
+    "build": "webpack",
     "test": "eslint . --fix"
   },
   "repository": {
