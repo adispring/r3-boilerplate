@@ -1,6 +1,6 @@
-// import R from 'ramda';
+import config from './config.json';
 export default element => {
   const greeter = document.createElement(element);
-  greeter.textContent = 'Hi there and greeting';
+  greeter.textContent = config.greetText;
   return greeter;
 };
