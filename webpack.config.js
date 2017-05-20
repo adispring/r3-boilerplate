@@ -5,4 +5,10 @@ module.exports = {
     path: `${__dirname}/public`,
     filename: 'bundle.js',
   },
+  devServer: {
+    contentBase: './public',
+    port: 3000,
+    historyApiFallback: true,
+    inline: true,
+  },
 };

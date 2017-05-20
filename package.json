@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "server/server.js",
   "scripts": {
-    "start": "node ./worker",
+    "start": "webpack-dev-server --progress",
     "build": "webpack",
     "test": "eslint . --fix"
   },
@@ -32,6 +32,7 @@
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1"
+    "eslint-plugin-react": "^7.0.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
