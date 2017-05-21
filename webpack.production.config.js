@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  devtool: 'eval-source-map',
-
   entry: `${__dirname}/app/main.js`,
   output: {
     path: `${__dirname}/build`,
@@ -38,17 +38,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-        ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
       },
     ],
   },
@@ -57,13 +50,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${__dirname}/app/index.tmpl.html`,
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss: [
+          autoprefixer,
+        ],
+      },
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('style.css'),
   ],
-
-  devServer: {
-    contentBase: './public',
-    port: 3000,
-    historyApiFallback: true,
-    inline: true,
-  },
 };
