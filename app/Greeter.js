@@ -1,6 +1,15 @@
+import React, { Component } from 'react';
 import config from './config.json';
-export default element => {
-  const greeter = document.createElement(element);
-  greeter.textContent = config.greetText;
-  return greeter;
-};
+
+class Greeter extends Component {
+  render() {
+    return (
+      <div>
+      {config.greetText}
+      </div>
+    );
+  }
+}
+
+export default Greeter;
+

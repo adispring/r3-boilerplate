@@ -1,2 +1,5 @@
-import greeter from './Greeter';
-document.getElementById('root').appendChild(greeter('div'));
+import React from 'react';
+import { render } from 'react-dom';
+import Greeter from './Greeter';
+
+render(<Greeter />, document.getElementById('root'));
